@@ -17,10 +17,10 @@ git clone https://github.com/CFGLondon/team-9.git
 ## Credits
 
 ### Team 9
-Dhruv Chauhan
-Rowan Kypreos
-Dylan Cope
-Chris Beale
-Mohammed Aslam
+*Dhruv Chauhan
+*Rowan Kypreos
+*Dylan Cope
+*Chris Beale
+*Mohammed Aslam
 
 ## License
