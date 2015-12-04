@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name = "primary"          type = "color"> #9C27B0 </item>
+    <item name = "primary_dark"     type = "color"> #7B1FA2 </item>
+    <item name = "primary_light"    type = "color"> #E0B0E0 </item>
+    <item name = "accent"           type = "color"> #7C4DFF </item>
+    <item name = "title_text"       type = "color"> #FFFFFF </item>
+    <item name = "primary_text"     type = "color"> #AAAAAA </item>
+    <item name = "secondary_text"   type = "color"> #727272 </item>
+    <item name = "divider"          type = "color"> #B6B6B6 </item>
+
+    <item name = "background"       type = "color"> #222222 </item>
+    <item name = "drawer_back"      type = "color"> #151515 </item>
+</resources>
