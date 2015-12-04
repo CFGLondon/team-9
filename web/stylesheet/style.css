@@ -1,7 +1,7 @@
 /* stylesheet for web */
 body,
 textarea {
-	color: #fff;
+	color: #000;
 	font-family: "Helvetica", sans-serif;
     background-color: white;
 	font-weight: 400;
@@ -11,12 +11,24 @@ textarea {
 	-webkit-font-feature-settings: "kern";
 }
 
-h1, h2, h3, h4, h5, h6 {
+h2, h3, h4, h5, h6 {
     font-family: "Helvetica", sans-serif;
 	font-weight: 700;
 	line-height: 1.15;
 	-webkit-font-feature-settings: "dlig", "liga", "lnum", "kern";
-	color: #2e2e2e;
+	color: #000;
 	margin: 0 0 .3em;
 	clear: both;
+}
+
+#header {
+    background-color:black;
+    color:white;
+    font-weight: 900;
+    text-align:center;
+    padding:5px;
+}
+
+.button {
+    border: 1px black;
 }
