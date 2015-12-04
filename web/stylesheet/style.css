@@ -1,8 +1,9 @@
 /* stylesheet for web */
 body,
 textarea {
-	color: #000;
+	color: #fff;
 	font-family: "Helvetica", sans-serif;
+    background-color: white;
 	font-weight: 400;
 	font-size: 18px;
 	font-size: 1.8rem;
