@@ -1,7 +1,3 @@
-Save the Children
-
-Wearables application
-
 # CFG - 04.12.15
 ### Save the Children
 Wearables Application
@@ -9,9 +5,6 @@ Wearables Application
 ## Installation
 
 git clone https://github.com/CFGLondon/team-9.git
-
-## Usage
-
 
 ## Contributing
 
