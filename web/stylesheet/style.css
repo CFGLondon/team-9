@@ -1,0 +1,21 @@
+/* stylesheet for web */
+body,
+textarea {
+	color: #000;
+	font-family: "Helvetica", sans-serif;
+	font-weight: 400;
+	font-size: 18px;
+	font-size: 1.8rem;
+	line-height: 1.75;
+	-webkit-font-feature-settings: "kern";
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Helvetica", sans-serif;
+	font-weight: 700;
+	line-height: 1.15;
+	-webkit-font-feature-settings: "dlig", "liga", "lnum", "kern";
+	color: #2e2e2e;
+	margin: 0 0 .3em;
+	clear: both;
+}
