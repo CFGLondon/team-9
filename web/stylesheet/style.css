@@ -21,6 +21,26 @@ h2, h3, h4, h5, h6 {
 	clear: both;
 }
 
+#av {
+    border: 1px black;
+    border-width: medium;
+    float:left;
+    /*height:40px;
+    width:10px;*/
+}
+
+#idstats {
+    float: right;
+}
+
+#lhs {
+    float: left;
+}
+
+#rhs {
+    float: right;
+}
+
 #header {
     background-color:black;
     color:white;
@@ -29,6 +49,14 @@ h2, h3, h4, h5, h6 {
     padding:5px;
 }
 
+#friends {
+
+}
+
 .button {
+    display: inline;
     border: 1px black;
+    border-width: medium;
+    border-style: solid;
+    padding: 5px
 }
