@@ -5,7 +5,8 @@
         "badge_id": 1,
         "badge_title": "Football",
 	"badge_cost": "£10",
-	"badge_message":"You have raised enough money to buy two footballs provide a child with hours of fun!",
+	"badge_message":"You have raised enough money to buy 2 footballs provide a child with hours of fun!",
+	"badge_pic": "/badges/football.png",
       }
     },
     {
@@ -13,7 +14,8 @@
         "badge_id": 2,
         "badge_title": "Four Tree Saplings",
 	"badge_cost": "£60",
-	"badge_message":"You have raised enough money to provide twenty tree saplings that will eventually provide a family with food, income and a brighter future. ",
+	"badge_message":"You have raised enough money to provide 20 tree saplings that will eventually provide a family with food, income and a brighter future. ",
+	"badge_pic": "/badges/tree.png",
       }
     },
     {
@@ -22,6 +24,7 @@
         "badge_title": "Food Basket",
 	"badge_cost": "£100",
 	"badge_message":"You have raised enough money to provide 5 food baskets which can feed a family nutritious food for a 5 months to help them cope in an emergency.",
+	"badge_pic": "/badges/basket.png",
       }
     },
     {
@@ -30,6 +33,7 @@
         "badge_title": "Water Filter",
 	"badge_cost": "£200",
 	"badge_message":"You have raised enough money to buy 6 water filters that will bring safe drinking water to children at risk of deadly diseases like cholera.",
+	"badge_pic": "/badges/water.png",
       }
     },
     {
@@ -38,6 +42,7 @@
         "badge_title": "Health care for a year",
 	"badge_cost": "£300",
 	"badge_message":"You have raised enough money to provide 8 children with a year of basic healthcare to a child, delivered by a trained health worker.",
+	"badge_pic": "/badges/health.png",
       }
     },
     {
@@ -46,6 +51,7 @@
         "badge_title": "Family Emergency Kit",
 	"badge_cost": "£500",
 	"badge_message":"You have raised enough money to provide 11 famlies with blankets, soap, towels and shelter that will help a family in the wake of disaster.",
+	"badge_pic": "/badges/water.png",
       }
     },
     {
@@ -54,6 +60,7 @@
         "badge_title": "School Supplies",
 	"badge_cost": "£1000",
 	"badge_message": "You have raised enough money to provide 18 schools with school supplies help teachers do their job by providing a school with pens, pencils, books and whiteboards.",
+	"badge_pic": "/badges/school.png",
       }
     },
     {
@@ -61,7 +68,8 @@
         "badge_id": 8,
         "badge_title": "Bicycle for Health Worker",
 	"badge_cost": "£2000",
-	"badge_message":"You have raised enough money to enable a health worker to help sick children in hard-to-reach places.",
+	"badge_message":"You have raised enough money to provide 37 bicycles to enable a health workers to help sick children in hard-to-reach places.",
+	"badge_pic": "/badges/bike.png",
       }
     },
     {
@@ -69,7 +77,8 @@
         "badge_id": 9,
         "badge_title": "Donkey Library",
 	"badge_cost": "£3000",
-	"badge_message":"You have raised enough money to provide a librarian with a donkey that will be able to deliver up to four hundred books, helping to educate children and increase literacy.",
+	"badge_message":"You have raised enough money to provide 15 librarians with a donkey that will be able to deliver up to four hundred books, helping to educate children and increase literacy.",
+	"badge_pic": "/badges/book.png",
       }
     },
     {
@@ -77,7 +86,8 @@
         "badge_id": 10,
         "badge_title": "ClassRoom",
 	"badge_cost": "£5000",
-	"badge_message":"You have raised enough money to build a classroom and give children in remote places the incredible gift of education.",
+	"badge_message":"You have raised enough money to build 8 classrooms and give children in remote places the incredible gift of education.",
+	"badge_pic": "/badges/classroom.png",
       }
     },
   ]
