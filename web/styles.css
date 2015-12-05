@@ -7,16 +7,40 @@
 .padded{
     margin-left: 40px;
 }
-.buttons{
-    margin-top: 20px;
+.buttonDiv{
+    margin-top:15px;
+    width:300px;
+    height:200px;
+}
 
+.buttonDiv button{
+    margin-top:15px;
+    margin-bottom:15px;
+    width:300px;
+    height:75px;
 }
 .fillDiv{
     width:100%;
-    height:100%;
 }
+.fsmall{
+    float:right;
+    width:50%;
+}
+.footer{
+    position:absolute;
+    left:0px;
+    bottom:0px;
+    width:100%;
+}
+.test{
+    background-color:red;
+}
+.rhs{
+    float:right;
+}
+
 .metrics{
-    width:30%;
+    width:0%;
     height:50%;
 }
 .half{
@@ -33,7 +57,7 @@
 }
 
 .fill img{
-    max-width:100%;
+    width:300px;
     max-height:100%;
     overflow:hidden;
 }
