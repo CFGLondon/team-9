@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements
     public static ProfileFragment listingsFragment;
     public static ChallengeFragment challengeFragment;
     public static SocialFragment socialFragment;
+    public static NavigationDrawerFragment drawerFragment;
 
     public static LatLng BRISTOL;
 
@@ -91,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements
 
 
 
-        NavigationDrawerFragment drawerFragment = (NavigationDrawerFragment)
+        drawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
 
         DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -109,7 +110,7 @@ public class MainActivity extends AppCompatActivity implements
     public void loadData()
     {
         new LoadEventInfo().execute();
-
+        drawerFragment.unlockDrawer();
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.content_fragment, LoadingFragment.newInstance())

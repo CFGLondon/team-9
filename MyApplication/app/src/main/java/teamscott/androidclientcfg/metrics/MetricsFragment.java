@@ -4,9 +4,14 @@ import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import teamscott.androidclientcfg.ItemClickListener;
 import teamscott.androidclientcfg.MainActivity;
@@ -25,6 +30,9 @@ public class MetricsFragment extends Fragment implements ItemClickListener
     private MainActivity main;
 
     private OnFragmentInteractionListener mListener;
+    private RecyclerView recyclerView;
+    private MetricsItemAdapter adapter;
+    private List<MetricsItemInfo> info;
 
 
 
@@ -57,11 +65,33 @@ public class MetricsFragment extends Fragment implements ItemClickListener
         super.onCreate(savedInstanceState);
     }
 
+    public List<MetricsItemInfo> getInfo()
+    {
+        List<MetricsItemInfo> info = new ArrayList<MetricsItemInfo>();
+
+        MetricsItemInfo i1 = new MetricsItemInfo();
+        i1.text = "";
+        info.add(i1);
+
+
+        return info;
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_metrics, container, false);
+        View layout = inflater.inflate(R.layout.fragment_metrics, container, false);
+
+        recyclerView = (RecyclerView) layout.findViewById(R.id.metrics_list);
+
+        info = getInfo();
+        adapter = new MetricsItemAdapter(getActivity(), info);
+
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+        return layout;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -83,6 +113,7 @@ public class MetricsFragment extends Fragment implements ItemClickListener
     }
 
     @Override
+
     public void onDetach() {
         super.onDetach();
         mListener = null;

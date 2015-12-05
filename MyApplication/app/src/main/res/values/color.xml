@@ -10,5 +10,5 @@
     <item name = "divider"          type = "color"> #B6B6B6 </item>
 
     <item name = "background"       type = "color"> #EEEEEE </item>
-    <item name = "drawer_back"      type = "color"> #FFFFFF </item>
+    <item name = "drawer_back"      type = "color"> #D8DACC </item>
 </resources>
