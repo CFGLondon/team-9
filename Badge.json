@@ -51,7 +51,7 @@
         "badge_title": "Family Emergency Kit",
 	"badge_cost": "£500",
 	"badge_message":"You have raised enough money to provide 11 famlies with blankets, soap, towels and shelter that will help a family in the wake of disaster.",
-	"badge_pic": "/home/sayyad/CodeForGood/team-9/badges",
+	"badge_pic": "/badges/water.png",
       }
     },
     {
@@ -60,7 +60,7 @@
         "badge_title": "School Supplies",
 	"badge_cost": "£1000",
 	"badge_message": "You have raised enough money to provide 18 schools with school supplies help teachers do their job by providing a school with pens, pencils, books and whiteboards.",
-	"badge_pic": "/home/sayyad/CodeForGood/team-9/badges",
+	"badge_pic": "/badges/school.png",
       }
     },
     {
@@ -69,7 +69,7 @@
         "badge_title": "Bicycle for Health Worker",
 	"badge_cost": "£2000",
 	"badge_message":"You have raised enough money to provide 37 bicycles to enable a health workers to help sick children in hard-to-reach places.",
-	"badge_pic": "/home/sayyad/CodeForGood/team-9/badges",
+	"badge_pic": "/badges/bike.png",
       }
     },
     {
@@ -78,7 +78,7 @@
         "badge_title": "Donkey Library",
 	"badge_cost": "£3000",
 	"badge_message":"You have raised enough money to provide 15 librarians with a donkey that will be able to deliver up to four hundred books, helping to educate children and increase literacy.",
-	"badge_pic": "/home/sayyad/CodeForGood/team-9/badges",
+	"badge_pic": "/badges/book.png",
       }
     },
     {
@@ -87,7 +87,7 @@
         "badge_title": "ClassRoom",
 	"badge_cost": "£5000",
 	"badge_message":"You have raised enough money to build 8 classrooms and give children in remote places the incredible gift of education.",
-	"badge_pic": "/home/sayyad/CodeForGood/team-9/badges",
+	"badge_pic": "/badges/classroom.png",
       }
     },
   ]
