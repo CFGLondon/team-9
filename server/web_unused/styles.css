@@ -1,0 +1,63 @@
+.bottomMargin{
+    margin-bottom: 15px;
+}
+.top{
+    padding-top : 10px;
+}
+.padded{
+    margin-left: 40px;
+}
+.buttonDiv{
+    margin-top:15px;
+    width:300px;
+    height:200px;
+}
+
+.buttonDiv button{
+    margin-top:15px;
+    margin-bottom:15px;
+    width:300px;
+    height:75px;
+}
+.fillDiv{
+    width:100%;
+}
+.fsmall{
+    float:right;
+    width:50%;
+}
+.footer{
+    position:absolute;
+    left:0px;
+    bottom:0px;
+    width:100%;
+}
+.test{
+    background-color:red;
+}
+.rhs{
+    float:right;
+}
+
+.metrics{
+    width:0%;
+    height:50%;
+}
+.half{
+    width: inherit;
+    width:50%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.main{
+    margin: auto 0px 0px;
+    width: 60%;
+    overflow:hidden;
+}
+
+.fill img{
+    width:300px;
+    max-height:100%;
+    overflow:hidden;
+}
