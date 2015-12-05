@@ -53,7 +53,7 @@ public class ChallengeFragment extends Fragment implements ItemClickListener
     {
         List<ChallengeInfo> info = new ArrayList<ChallengeInfo>();
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 5; i++) {
             ChallengeInfo newInfo = new ChallengeInfo();
             newInfo.title = "A Challenge";
             newInfo.description = "This is a really challenging challenge.";

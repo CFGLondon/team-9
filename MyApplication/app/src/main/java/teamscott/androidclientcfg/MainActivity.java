@@ -53,10 +53,10 @@ public class MainActivity extends AppCompatActivity implements
 
     public static MainActivity main;
     public static SupportMapFragment mapFragment;
-    public static MetricsFragment metricsFragment;
-    public static ProfileFragment listingsFragment;
-    public static ChallengeFragment challengeFragment;
-    public static SocialFragment socialFragment;
+//    public static MetricsFragment metricsFragment;
+//    public static ProfileFragment listingsFragment;
+//    public static ChallengeFragment challengeFragment;
+//    public static SocialFragment socialFragment;
     public static NavigationDrawerFragment drawerFragment;
 
     public static LatLng BRISTOL;
@@ -79,11 +79,11 @@ public class MainActivity extends AppCompatActivity implements
 
         setContentView(R.layout.activity_main);
 
-        listingsFragment = ProfileFragment.newInstance(main);
-        metricsFragment = MetricsFragment.newInstance(main);
-        challengeFragment = ChallengeFragment.newInstance(main);
-        socialFragment = SocialFragment.newInstance(main);
 
+//        listingsFragment = ProfileFragment.newInstance(main);
+//        metricsFragment = MetricsFragment.newInstance(main);
+//        challengeFragment = ChallengeFragment.newInstance(main);
+//        socialFragment = SocialFragment.newInstance(main);
         toolbar = (Toolbar) findViewById(R.id.app_bar);
 
         setSupportActionBar(toolbar);
@@ -93,16 +93,16 @@ public class MainActivity extends AppCompatActivity implements
 
 
         drawerFragment = (NavigationDrawerFragment)
-                getSupportFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
+            getSupportFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
 
         DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawerLayout.setScrimColor(Color.TRANSPARENT);
 
         drawerFragment.setUp(
-                R.id.fragment_navigation_drawer,
-                R.id.main_content,
-                drawerLayout,
-                toolbar);
+            R.id.fragment_navigation_drawer,
+            R.id.main_content,
+            drawerLayout,
+            toolbar);
 
 
     }
@@ -112,9 +112,40 @@ public class MainActivity extends AppCompatActivity implements
         new LoadEventInfo().execute();
         drawerFragment.unlockDrawer();
         getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.content_fragment, LoadingFragment.newInstance())
-                .commit();
+            .beginTransaction()
+            .replace(R.id.content_fragment, LoadingFragment.newInstance())
+            .commit();
+    }
+
+
+
+    public void gotoMetrics()
+    {
+        getSupportFragmentManager()
+            .beginTransaction()
+            .replace(R.id.content_fragment, MetricsFragment.newInstance(main))
+            .commit();
+    }
+
+    public void gotoChallenges()
+    {
+        getSupportFragmentManager()
+            .beginTransaction()
+            .replace(R.id.content_fragment, ChallengeFragment.newInstance(main))
+            .commit();
+    }
+
+    public void gotoProfile()
+    {
+       loadData();
+    }
+
+    public void gotoSocial()
+    {
+        getSupportFragmentManager()
+            .beginTransaction()
+            .replace(R.id.content_fragment, SocialFragment.newInstance(main))
+            .commit();
     }
 
 
@@ -186,7 +217,6 @@ public class MainActivity extends AppCompatActivity implements
 
     public void refreshData()
     {
-        listingsFragment = ProfileFragment.newInstance(this);
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.content_fragment, LoadingFragment.newInstance())
@@ -239,6 +269,7 @@ public class MainActivity extends AppCompatActivity implements
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
+            ProfileFragment profileFragment = ProfileFragment.newInstance(main);
 
             if (jsonArray != null)
             {
@@ -250,7 +281,7 @@ public class MainActivity extends AppCompatActivity implements
                         CompetitorInfo info = new CompetitorInfo();
                         info.text = "Name: " + obj.getString("name") + "\n" +
                                     "Times larger than the sun: " + obj.getInt("size");
-                        listingsFragment.addItem(info);
+                        profileFragment.addItem(info);
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
@@ -260,7 +291,7 @@ public class MainActivity extends AppCompatActivity implements
 //            if (listingsFragment.getInfo().size() > 5)
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.content_fragment, listingsFragment)
+                    .replace(R.id.content_fragment, profileFragment)
                     .commit();
 //            else new LoadEventInfo().execute();
         }
