@@ -4,9 +4,14 @@ import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import teamscott.androidclientcfg.ItemClickListener;
 import teamscott.androidclientcfg.MainActivity;
@@ -24,6 +29,9 @@ public class ChallengeFragment extends Fragment implements ItemClickListener
 {
     private MainActivity main;
     private OnFragmentInteractionListener mListener;
+    private RecyclerView recyclerView;
+    private ChallengeItemAdapter adapter;
+    private List<ChallengeInfo> info;
 
     // TODO: Rename and change types and number of parameters
     public static ChallengeFragment newInstance(MainActivity main) {
@@ -41,11 +49,36 @@ public class ChallengeFragment extends Fragment implements ItemClickListener
         super.onCreate(savedInstanceState);
     }
 
+    public List<ChallengeInfo> getInfo()
+    {
+        List<ChallengeInfo> info = new ArrayList<ChallengeInfo>();
+
+        for (int i = 0; i < 10; i++) {
+            ChallengeInfo newInfo = new ChallengeInfo();
+            newInfo.title = "A Challenge";
+            newInfo.description = "This is a really challenging challenge.";
+            newInfo.imageId = R.drawable.challenge_icon;
+            info.add(newInfo);
+        }
+
+        return info;
+    }
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_challenge, container, false);
+        View layout = inflater.inflate(R.layout.fragment_challenge, container, false);
+        recyclerView = (RecyclerView) layout.findViewById(R.id.challenge_list);
+
+
+        info = getInfo();
+        adapter = new ChallengeItemAdapter(getActivity(), info);
+        adapter.setClickListener(this);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        return layout;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -73,7 +106,8 @@ public class ChallengeFragment extends Fragment implements ItemClickListener
     }
 
     @Override
-    public void itemClicked(View v, int pos) {}
+    public void itemClicked(View v, int pos) {
+    }
 
     /**
      * This interface must be implemented by activities that contain this
