@@ -33,12 +33,18 @@ h2, h3, h4, h5, h6 {
     float: right;
 }
 
+#profile {
+    float:
+}
+
 #lhs {
     float: left;
+    display: block;
 }
 
 #rhs {
     float: right;
+    display: block;
 }
 
 #header {
@@ -50,7 +56,9 @@ h2, h3, h4, h5, h6 {
 }
 
 #friends {
-
+    border: 3px black;
+    border-width: medium;
+    position: right;
 }
 
 .button {
