@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:padding="8dp"
-            android:textSize="20dp"
+            android:textSize="25dp"
             android:text="Label"/>
 
         <TextView

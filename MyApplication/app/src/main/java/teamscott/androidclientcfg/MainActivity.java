@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements
 
         getSupportFragmentManager()
                 .beginTransaction()
-                .add(R.id.content_fragment, SplashFragment.newInstance(main))
+                .add(R.id.content_fragment, ProfileFragment.newInstance(main))
                 .commit();
 
         setContentView(R.layout.activity_main);
@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity implements
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setPadding(0, getStatusBarHeight(), 0, 0);
-
+        toolbar.setTitle("My Save The Child Profile");
 
 
         drawerFragment = (NavigationDrawerFragment)

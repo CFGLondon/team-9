@@ -53,10 +53,22 @@ public class ChallengeFragment extends Fragment implements ItemClickListener
     {
         List<ChallengeInfo> info = new ArrayList<ChallengeInfo>();
 
+        String[] titles = {
+                "Get your heart going", "Against the clock",
+                "Challenge from a friend!", "Team invite!", "Stamina training"
+        };
+        String[] descriptions = {
+                "Get your heart rate above 180bpm during a practice run or cycle",
+                "beat your PR for quickest one kilometre",
+                "Your Facebook friend Sally Morgan challenged you to complete three quarter marathons on consecutive days",
+                "Your Facebook friends Dave Elliot and John Hardy invited you to join their marathon team!",
+                "Run or cycle for one hour whilst keeping your heat rate and speed as constant as possible"
+        };
+
         for (int i = 0; i < 5; i++) {
             ChallengeInfo newInfo = new ChallengeInfo();
-            newInfo.title = "A Challenge";
-            newInfo.description = "This is a really challenging challenge.";
+            newInfo.title = titles[i];
+            newInfo.description = descriptions[i];
             newInfo.imageId = R.drawable.challenge_icon;
             info.add(newInfo);
         }

@@ -4,13 +4,10 @@ import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
 
 import org.json.JSONObject;
 
@@ -57,40 +54,40 @@ public class ProfileFragment extends Fragment implements ItemClickListener
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState)
     {
-        final View view =  inflater.inflate(R.layout.fragment_listings, container, false);
-        mRecyclerView = (RecyclerView) view.findViewById(R.id.listings_recycler_view);
-        mAdapter = new ProfileItemAdapter(getActivity(), mInfo);
-        mAdapter.setClickListener(this);
-        mRecyclerView.setAdapter(mAdapter);
-        mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 1));
-
-        Button refreshButton = (Button) view.findViewById(R.id.refresh_button);
-        refreshButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                main.refreshData();
-            }
-        });
-
-        Button submitButton = (Button) view.findViewById(R.id.submit_button);
-        submitButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v)
-            {
-                EditText nameEditText = (EditText) view.findViewById(R.id.name_edit_text);
-                EditText sizeEditText = (EditText) view.findViewById(R.id.size_edit_text);
-                String name = nameEditText.getText().toString();
-                String size = sizeEditText.getText().toString();
-
-                main.addEntryToDB(name, size);
-
-                CompetitorInfo info = new CompetitorInfo();
-                info.text = "Name: " + name + "\n" + "Times larger than the sun: " + size;
-                addItem(info);
-            }
-        });
-
-        return view;
+        return inflater.inflate(R.layout.fragment_listings, container, false);
+//        mRecyclerView = (RecyclerView) view.findViewById(R.id.listings_recycler_view);
+//        mAdapter = new ProfileItemAdapter(getActivity(), mInfo);
+//        mAdapter.setClickListener(this);
+//        mRecyclerView.setAdapter(mAdapter);
+//        mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 1));
+//
+//        Button refreshButton = (Button) view.findViewById(R.id.refresh_button);
+//        refreshButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                main.refreshData();
+//            }
+//        });
+//
+//        Button submitButton = (Button) view.findViewById(R.id.submit_button);
+//        submitButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v)
+//            {
+//                EditText nameEditText = (EditText) view.findViewById(R.id.name_edit_text);
+//                EditText sizeEditText = (EditText) view.findViewById(R.id.size_edit_text);
+//                String name = nameEditText.getText().toString();
+//                String size = sizeEditText.getText().toString();
+//
+//                main.addEntryToDB(name, size);
+//
+//                CompetitorInfo info = new CompetitorInfo();
+//                info.text = "Name: " + name + "\n" + "Times larger than the sun: " + size;
+//                addItem(info);
+//            }
+//        });
+//
+//        return view;
     }
 
     public void addItem(JSONObject obj)

@@ -3,8 +3,10 @@
     android:layout_height="match_parent"
     tools:context="teamscott.androidclientcfg.social.SocialFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
-        android:text="I'm the social fragment and I'm better than you." />
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/social_list">
+    </android.support.v7.widget.RecyclerView>
 
 </FrameLayout>

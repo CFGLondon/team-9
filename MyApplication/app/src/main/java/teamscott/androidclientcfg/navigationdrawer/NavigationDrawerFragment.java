@@ -2,8 +2,10 @@ package teamscott.androidclientcfg.navigationdrawer;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Point;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -41,7 +43,7 @@ public class NavigationDrawerFragment extends Fragment implements ItemClickListe
     private List<DrawerItemInfo> mInfo;
     private Toolbar mToolbar;
     private ImageView mNavDrawerImage;
-    private boolean navDrawerLocked = true;
+    private boolean navDrawerLocked = false;
 
     public static String PREF_FILE_NAME = "drawer_pref";
     public static String KEY_USER_LEARNED_DRAWER = "user_learned_drawer";
@@ -219,6 +221,10 @@ public class NavigationDrawerFragment extends Fragment implements ItemClickListe
         }
         else if (id == R.drawable.maps) {
             transaction.replace(R.id.content_fragment, MainActivity.mapFragment).commit();
+        }
+        else if (id == R.drawable.savethechildren_logo) {
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://secure.savethechildren.org.uk/donate/"));
+            startActivity(browserIntent);
         }
 
         closeDrawers();
