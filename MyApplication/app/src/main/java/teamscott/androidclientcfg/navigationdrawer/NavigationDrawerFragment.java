@@ -47,7 +47,7 @@ public class NavigationDrawerFragment extends Fragment implements ItemClickListe
     public static String KEY_USER_LEARNED_DRAWER = "user_learned_drawer";
 
     public NavigationDrawerFragment() {
-        // Required empty public constructor
+//         Required empty public constructor
     }
 
 
@@ -77,10 +77,11 @@ public class NavigationDrawerFragment extends Fragment implements ItemClickListe
         List<DrawerItemInfo> data = new ArrayList<DrawerItemInfo>();
 
         String[] strings = {
-                "Profile", "Metrics", "Challenge", "Social", "Save The Children"};
+                "Profile", "Metrics", "Challenge", "Social", "Map", "Save The Children"
+        };
         int[] icons = {
                 R.drawable.profile_icon, R.drawable.metrics_icon, R.drawable.challenge_icon,
-                R.drawable.social_icon, R.drawable.savethechildren_logo};
+                R.drawable.social_icon, R.drawable.maps, R.drawable.savethechildren_logo};
 
         for (int i = 0; i < strings.length && i < icons.length; i++)
         {
@@ -191,6 +192,12 @@ public class NavigationDrawerFragment extends Fragment implements ItemClickListe
         return pref.getString(key, defValue);
     }
 
+    public void closeDrawers()
+    {
+        mDrawerLayout.closeDrawers();
+    }
+
+
     @Override
     public void itemClicked(View v, int pos)
     {
@@ -199,19 +206,21 @@ public class NavigationDrawerFragment extends Fragment implements ItemClickListe
         mToolbar.setTitle(mInfo.get(pos).title);
 
         if (id == R.drawable.metrics_icon) {
-            transaction.replace(R.id.content_fragment, MainActivity.metricsFragment).commit();
+            MainActivity.main.gotoMetrics();
         }
-        if (id == R.drawable.profile_icon) {
-            transaction.replace(R.id.content_fragment, MainActivity.listingsFragment).commit();
+        else if (id == R.drawable.profile_icon) {
+            MainActivity.main.gotoProfile();
         }
-        if (id == R.drawable.challenge_icon) {
-            transaction.replace(R.id.content_fragment, MainActivity.challengeFragment).commit();
+        else if (id == R.drawable.challenge_icon) {
+            MainActivity.main.gotoChallenges();
+        }
+        else if (id == R.drawable.social_icon) {
+            MainActivity.main.gotoSocial();
+        }
+        else if (id == R.drawable.maps) {
+            transaction.replace(R.id.content_fragment, MainActivity.mapFragment).commit();
+        }
 
-        }
-        if (id == R.drawable.social_icon) {
-            transaction.replace(R.id.content_fragment, MainActivity.socialFragment).commit();
-        }
-        mDrawerLayout.closeDrawers();
-
+        closeDrawers();
     }
 }

@@ -3,19 +3,64 @@
     android:layout_height="match_parent"
     tools:context="teamscott.androidclientcfg.splash.SplashFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
-        android:text="Welcome to the app!" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/asdf"
+        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Name: "
+            android:layout_alignBottom="@+id/asdf"
+            android:layout_toLeftOf="@+id/name_edit_text1" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text=""
+            android:ems="10"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/name_edit_text1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:id="@+id/asdf1"
+        android:layout_below="@+id/asdf">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Size: "
+            android:layout_alignBottom="@+id/asdf1"
+            android:layout_toLeftOf="@+id/size_edit_text1" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:layout_alignLeft="@+id/editTextName"
+            android:layout_alignStart="@+id/editTextName"
+            android:id="@+id/size_edit_text1"/>
+
+    </LinearLayout>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ENTER THE JOYYYYY!!!!!!!"
-        android:padding="5dp"
-        android:paddingRight="10dp"
-        android:layout_centerHorizontal="true"
-        android:onClick="sumbitOnClick"
-        android:id="@+id/enterapp_button" />
+        android:text="Enter"
+        android:id="@+id/enterapp_button"/>
+
 
 </FrameLayout>
