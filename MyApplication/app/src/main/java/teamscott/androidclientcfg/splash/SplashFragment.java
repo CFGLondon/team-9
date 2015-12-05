@@ -1,4 +1,4 @@
-package teamscott.androidclientcfg.metrics;
+package teamscott.androidclientcfg.splash;
 
 import android.app.Activity;
 import android.net.Uri;
@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import teamscott.androidclientcfg.ItemClickListener;
 import teamscott.androidclientcfg.MainActivity;
@@ -15,40 +16,23 @@ import teamscott.androidclientcfg.R;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link MetricsFragment.OnFragmentInteractionListener} interface
+ * {@link SplashFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link MetricsFragment#newInstance} factory method to
+ * Use the {@link SplashFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class MetricsFragment extends Fragment implements ItemClickListener
+public class SplashFragment extends Fragment implements ItemClickListener
 {
     private MainActivity main;
-
     private OnFragmentInteractionListener mListener;
 
-
-
-    public static MetricsFragment newInstance(MainActivity main) {
-        MetricsFragment fragment = new MetricsFragment();
+    public static SplashFragment newInstance(MainActivity main) {
+        SplashFragment fragment = new SplashFragment();
         fragment.main = main;
         return fragment;
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment MetricsFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static MetricsFragment newInstance(String param1, String param2) {
-        MetricsFragment fragment = new MetricsFragment();
-        return fragment;
-    }
-
-    public MetricsFragment() {
+    public SplashFragment() {
         // Required empty public constructor
     }
 
@@ -61,7 +45,18 @@ public class MetricsFragment extends Fragment implements ItemClickListener
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_metrics, container, false);
+        View view = inflater.inflate(R.layout.fragment_splash, container, false);
+
+        Button button = (Button) view.findViewById(R.id.enterapp_button);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                main.loadData();
+            }
+        });
+
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -98,7 +93,7 @@ public class MetricsFragment extends Fragment implements ItemClickListener
      * fragment to allow an interaction in this fragment to be communicated
      * to the activity and potentially other fragments contained in that
      * activity.
-     * <p>
+     * <p/>
      * See the Android Training lesson <a href=
      * "http://developer.android.com/training/basics/fragments/communicating.html"
      * >Communicating with Other Fragments</a> for more information.
