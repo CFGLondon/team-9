@@ -31,28 +31,39 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import teamscott.androidclientcfg.challenge.ChallengeFragment;
+import teamscott.androidclientcfg.metrics.MetricsFragment;
+import teamscott.androidclientcfg.navigationdrawer.NavigationDrawerFragment;
 import teamscott.androidclientcfg.profile.CompetitorInfo;
 import teamscott.androidclientcfg.profile.ProfileFragment;
-import teamscott.androidclientcfg.navigationdrawer.NavigationDrawerFragment;
+import teamscott.androidclientcfg.social.SocialFragment;
+import teamscott.androidclientcfg.splash.SplashFragment;
 
 
-public class MainActivity extends AppCompatActivity
-        implements ProfileFragment.OnFragmentInteractionListener, OnMapReadyCallback
+public class MainActivity extends AppCompatActivity implements
+        ProfileFragment.OnFragmentInteractionListener,
+        MetricsFragment.OnFragmentInteractionListener,
+        ChallengeFragment.OnFragmentInteractionListener,
+        SocialFragment.OnFragmentInteractionListener,
+        SplashFragment.OnFragmentInteractionListener,
+        OnMapReadyCallback
 {
-    private Toolbar mToolbar;
-    private GoogleMap mGoogleMap;
+    public Toolbar toolbar;
+    public GoogleMap googleMap;
 
     public static MainActivity main;
     public static SupportMapFragment mapFragment;
+    public static MetricsFragment metricsFragment;
     public static ProfileFragment listingsFragment;
+    public static ChallengeFragment challengeFragment;
+    public static SocialFragment socialFragment;
+
     public static LatLng BRISTOL;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
-        new LoadEventInfo().execute();
-
         super.onCreate(savedInstanceState);
         main = this;
 
@@ -62,17 +73,23 @@ public class MainActivity extends AppCompatActivity
 
         getSupportFragmentManager()
                 .beginTransaction()
-                .add(R.id.content_fragment, LoadingFragment.newInstance())
+                .add(R.id.content_fragment, SplashFragment.newInstance(main))
                 .commit();
 
         setContentView(R.layout.activity_main);
 
         listingsFragment = ProfileFragment.newInstance(main);
+        metricsFragment = MetricsFragment.newInstance(main);
+        challengeFragment = ChallengeFragment.newInstance(main);
+        socialFragment = SocialFragment.newInstance(main);
 
-        mToolbar = (Toolbar) findViewById(R.id.app_bar);
-        setSupportActionBar(mToolbar);
+        toolbar = (Toolbar) findViewById(R.id.app_bar);
+
+        setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        mToolbar.setPadding(0, getStatusBarHeight(), 0, 0);
+        toolbar.setPadding(0, getStatusBarHeight(), 0, 0);
+
+
 
         NavigationDrawerFragment drawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
@@ -84,8 +101,21 @@ public class MainActivity extends AppCompatActivity
                 R.id.fragment_navigation_drawer,
                 R.id.main_content,
                 drawerLayout,
-                mToolbar);
+                toolbar);
+
+
     }
+
+    public void loadData()
+    {
+        new LoadEventInfo().execute();
+
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.content_fragment, LoadingFragment.newInstance())
+                .commit();
+    }
+
 
     private int getStatusBarHeight()
     {
@@ -125,7 +155,7 @@ public class MainActivity extends AppCompatActivity
     public void onMapReady(GoogleMap googleMap)
     {
         Log.d("DEBUG", "Map Ready");
-        mGoogleMap = googleMap;
+        this.googleMap = googleMap;
         setUpMap();
     }
 
@@ -133,8 +163,8 @@ public class MainActivity extends AppCompatActivity
     {
         try
         {
-            mGoogleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(BRISTOL, 10));
-            mGoogleMap.setMyLocationEnabled(true);
+            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(BRISTOL, 10));
+            googleMap.setMyLocationEnabled(true);
         }
         catch (Exception e) {}
     }
