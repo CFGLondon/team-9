@@ -1,0 +1,84 @@
+{
+  "badges": [
+    {
+      "badge": {
+        "badge_id": 1,
+        "badge_title": "Football",
+	"badge_cost": "£10",
+	"badge_message":"You have raised enough money to buy two footballs provide a child with hours of fun!",
+      }
+    },
+    {
+      "badge": {
+        "badge_id": 2,
+        "badge_title": "Four Tree Saplings",
+	"badge_cost": "£50",
+	"badge_message":"You have raised enough money to provide four saplings that will eventually provide a family with food, income and a brighter future. ",
+      }
+    },
+    {
+      "badge": {
+        "badge_id": 3,
+        "badge_title": "Food Basket",
+	"badge_cost": "£100",
+	"badge_message":"You have raised enough money to feed a family nutritious food for a month to help them cope in an emergency.",
+      }
+    },
+    {
+      "badge": {
+        "badge_id": 4,
+        "badge_title": "Water Filter",
+	"badge_cost": "£200",
+	"badge_message":"You have raised enough money to buy  bring safe drinking water to children at risk of deadly diseases like cholera.",
+      }
+    },
+    {
+      "badge": {
+        "badge_id": 5,
+        "badge_title": "Health care for a year",
+	"badge_cost": "£300",
+	"badge_message":"You have raised enough money to provide a year of basic healthcare to a child, delivered by a trained health worker.",
+      }
+    },
+    {
+      "badge": {
+        "badge_id": 6,
+        "badge_title": "Family Emergency Kit",
+	"badge_cost": "£500",
+	"badge_message":"You have raised enough money to provide",
+      }
+    },
+    {
+      "badge": {
+        "badge_id": 7,
+        "badge_title": "School Supplies",
+	"badge_cost": "£1000",
+	"badge_message": "You have raised enough money to help teachers do their job by providing a school with pens, pencils, books and whiteboards.",
+      }
+    },
+    {
+      "badge": {
+        "badge_id": 8,
+        "badge_title": "Bicycle for Health Worker",
+	"badge_cost": "£2000",
+	"badge_message":"You have raised enough money to enable a health worker to help sick children in hard-to-reach places.",
+      }
+    },
+    {
+      "badge": {
+        "badge_id": 9,
+        "badge_title": "Donkey Library",
+	"badge_cost": "£3000",
+	"badge_message":"You have raised enough money to provide a librarian with a donkey that will be able to deliver up to four hundred books, helping to educate children and increase literacy.",
+      }
+    },
+    {
+      "badge": {
+        "badge_id": 10,
+        "badge_title": "ClassRoom",
+	"badge_cost": "£5000",
+	"badge_message":"You have raised enough money to build a classroom and give children in remote places the incredible gift of education.",
+      }
+    },
+  ]
+}
