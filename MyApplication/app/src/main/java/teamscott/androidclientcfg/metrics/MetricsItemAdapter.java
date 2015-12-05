@@ -33,9 +33,9 @@ public class MetricsItemAdapter extends RecyclerView.Adapter<MetricsItemAdapter.
         public ViewHolder(View itemView)
         {
             super(itemView);
-            textView = (TextView) itemView.findViewById(R.id.drawer_item_text);
-            imageView = (ImageView) itemView.findViewById(R.id.drawer_item_icon);
-            LinearLayout layout = (LinearLayout) itemView.findViewById(R.id.drawer_item_layout);
+            textView = (TextView) itemView.findViewById(R.id.metrics_item_text);
+            imageView = (ImageView) itemView.findViewById(R.id.metrics_item_icon);
+            LinearLayout layout = (LinearLayout) itemView.findViewById(R.id.metrics_item_layout);
             layout.setOnClickListener(this);
         }
 
@@ -62,7 +62,7 @@ public class MetricsItemAdapter extends RecyclerView.Adapter<MetricsItemAdapter.
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
     {
-        View view = mInflater.inflate(R.layout.drawer_item, parent, false);
+        View view = mInflater.inflate(R.layout.metrics_item, parent, false);
         ViewHolder viewHolder = new ViewHolder(view);
         return viewHolder;
     }

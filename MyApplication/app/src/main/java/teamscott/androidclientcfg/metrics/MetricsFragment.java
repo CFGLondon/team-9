@@ -69,10 +69,22 @@ public class MetricsFragment extends Fragment implements ItemClickListener
     {
         List<MetricsItemInfo> info = new ArrayList<MetricsItemInfo>();
 
-        MetricsItemInfo i1 = new MetricsItemInfo();
-        i1.text = "";
-        info.add(i1);
+        int ids[] = {
+                R.drawable.money, R.drawable.steps, R.drawable.heart, R.drawable.distance,
+                R.drawable.calories_burnt, R.drawable.clock, R.drawable.badge
+        };
 
+        String strings[] = {
+                "1234 pounds raised to help children!", "234532 steps ran.", "124,132 heart beats.", "214.2 miles.",
+                "13,123 calories burnt.", "15.1 days spent training", "13 badges earned."
+        };
+
+        for (int i = 0; i < 7; i++) {
+            MetricsItemInfo inf = new MetricsItemInfo();
+            inf.iconId = ids[i];
+            inf.text = strings[i];
+            info.add(inf);
+        }
 
         return info;
     }
