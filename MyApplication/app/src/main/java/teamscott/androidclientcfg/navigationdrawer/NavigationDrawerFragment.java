@@ -41,6 +41,7 @@ public class NavigationDrawerFragment extends Fragment implements ItemClickListe
     private List<DrawerItemInfo> mInfo;
     private Toolbar mToolbar;
     private ImageView mNavDrawerImage;
+    private boolean navDrawerLocked = true;
 
     public static String PREF_FILE_NAME = "drawer_pref";
     public static String KEY_USER_LEARNED_DRAWER = "user_learned_drawer";
@@ -67,6 +68,7 @@ public class NavigationDrawerFragment extends Fragment implements ItemClickListe
         mAdapter.setClickListener(this);
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
         return layout;
     }
 
@@ -96,6 +98,7 @@ public class NavigationDrawerFragment extends Fragment implements ItemClickListe
         mContainerView = getActivity().findViewById(containerId);
         mDrawerLayout = drawerLayout;
         mToolbar = toolbar;
+        mToolbar.setTitle("Profile");
 
         final RelativeLayout relativeLayout = (RelativeLayout) getActivity().findViewById(mainContentId);
         final ImageView icon = (ImageView) getActivity().findViewById(R.id.nav_image);
@@ -110,6 +113,12 @@ public class NavigationDrawerFragment extends Fragment implements ItemClickListe
             @Override
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
+
+                if (navDrawerLocked) {
+                    mDrawerLayout.closeDrawers();
+                    return;
+                }
+
                 if (!mUserLearnedDrawer) {
                     mUserLearnedDrawer = true;
                     saveToPreferences(getActivity(), KEY_USER_LEARNED_DRAWER, "true");
@@ -127,6 +136,12 @@ public class NavigationDrawerFragment extends Fragment implements ItemClickListe
             public void onDrawerSlide(View drawerView, float slideOffset)
             {
                 super.onDrawerSlide(drawerView, slideOffset);
+
+                if (navDrawerLocked) {
+                    mDrawerLayout.closeDrawers();
+                    return;
+                }
+
                 float drawerWidth = mContainerView.getWidth();
                 relativeLayout.setTranslationX(slideOffset * drawerWidth);
                 float x = 0.5f;
@@ -159,6 +174,11 @@ public class NavigationDrawerFragment extends Fragment implements ItemClickListe
         });
     }
 
+    public void unlockDrawer()
+    {
+        navDrawerLocked = false;
+    }
+
     public static void saveToPreferences(Context context, String key, String value)
     {
         SharedPreferences pref = context.getSharedPreferences(PREF_FILE_NAME, Context.MODE_PRIVATE);
@@ -176,18 +196,22 @@ public class NavigationDrawerFragment extends Fragment implements ItemClickListe
     {
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
         int id = mInfo.get(pos).iconId;
+        mToolbar.setTitle(mInfo.get(pos).title);
 
         if (id == R.drawable.metrics_icon) {
-            transaction.replace(R.id.content_fragment, MainActivity.mapFragment).commit();
-            mToolbar.setTitle(mInfo.get(pos).title);
+            transaction.replace(R.id.content_fragment, MainActivity.metricsFragment).commit();
         }
         if (id == R.drawable.profile_icon) {
             transaction.replace(R.id.content_fragment, MainActivity.listingsFragment).commit();
-            mToolbar.setTitle(mInfo.get(pos).title);
         }
+        if (id == R.drawable.challenge_icon) {
+            transaction.replace(R.id.content_fragment, MainActivity.challengeFragment).commit();
 
-        if (id == R.drawable.social_icon)
-            MainActivity.startRateIntent();
+        }
+        if (id == R.drawable.social_icon) {
+            transaction.replace(R.id.content_fragment, MainActivity.socialFragment).commit();
+        }
+        mDrawerLayout.closeDrawers();
 
     }
 }
