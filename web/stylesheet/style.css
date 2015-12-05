@@ -58,10 +58,20 @@ h2, h3, h4, h5, h6 {
 #friends {
     border: 3px black;
     border-width: medium;
-    position: right;
+    float: right;
 }
 
-.button {
+.button1 {
+	float: left;
+    display: inline;
+    border: 1px black;
+    border-width: medium;
+    border-style: solid;
+    padding: 5px
+}
+
+.button2 {
+	float: right;
     display: inline;
     border: 1px black;
     border-width: medium;
